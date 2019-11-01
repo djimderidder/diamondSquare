@@ -1,4 +1,4 @@
-function [surface] = diamondSquare(n,h,irange,t)
+function [surface] = diamondSquare(n,h,irange)
 %Diamond square method
 %   Detailed explanation goes here
     N=(2^n)+1;
@@ -11,7 +11,6 @@ function [surface] = diamondSquare(n,h,irange,t)
         end
     end
     e = ((N-1)/2)+1;
-    for tt=1:t
     range = irange;
     for i=1:n
         x = 2^(n-i+1);
@@ -36,7 +35,6 @@ function [surface] = diamondSquare(n,h,irange,t)
             end
         end
         range = range*h*2^(-h);
-    end
     end
 
     surface = S(e:N+e-1,e:N+e-1);
